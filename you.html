@@ -37,13 +37,6 @@
 
     .intro {}
 
-    .odiwrSection {
-      padding-top: 15%;
-      /* background-color: black;
-      color: white; */
-
-    }
-
     .paragraph {
       padding-top: 10vh;
       margin: 0 5vh;
@@ -54,9 +47,17 @@
       padding-top: 3vh;
     }
 
-    .odiwr {
-      padding-top: 10vh;
+    .yourvideo {
+      padding-top: 3vh;
 
+    }
+
+    .yourname {
+      padding: 2vh;
+    }
+
+    .yourname:hover {
+      cursor: pointer;
     }
 
     @font-face {
@@ -88,7 +89,7 @@
   <div id="nav">
     <img src="images/nav/archiveIcon.png" onclick="location.href='archive.html'">
 
-   <img src="images/nav/channelIcon.gif"
+    <img src="images/nav/channelIcon.gif"
       onclick="window.open('https://youtube.com/@idkstudios_?si=rxS6G2NfZAJHWVZD', '_blank')">
 
     <img src="images/nav/youIcon.png" onclick="location.href='you.html'">
@@ -145,22 +146,35 @@
                 </p>
               </div>
 
+              <p style="text-align: center; font-family: 'Internet.ttf';  padding-top: 15%;">
+                ------------------------------------------------</p>
 
-              <div class="odiwrSection">
-                <p style="text-align: center; font-family: 'Internet.ttf'; padding-bottom: 2px;">
-                  ------------------------------------------------</p>
+              <!-- THIS IS BILL'S SECTION  (basically the format for all submissions)-->
+              <div class="part">
 
-                <div class="odiwr">
-                  <video autoplay playsinline muted width=200px height=200px loop>
-                    <source src="videos/odiwr2.mp4" type="video/mp4" />
+                <!-- Person's Name/Alias -->
+
+                <p style="text-align: center; color: blue; font-weight: bold;  class=" yourname">
+                  <a onclick="window.open('https: //https://www.youtube.com/@idkstudios_', '_blank' )"> Bill Odiwuor
+                    Kawaka</a>
+                </p>
+
+                <!-- Preffered video (MP4) -->
+                <div class="yourvideo">
+                  <video autoplay playsinline muted width=200px height=auto loop>
+                    <source src="youPage/videos/odiwr2.mp4" type="video/mp4" />
                   </video>
 
-                  <p style="text-align: center;">
-                    <a onclick="window.open('https: //https://www.youtube.com/@idkstudios_', '_blank' )"> Bill Odiwuor
-                      Kawaka</a>
-                  </p>
                 </div>
 
+                <!-- Prefferd Image -->
+                <!-- <div class="yourimage"> -->
+                <!-- put path to image in the src -->
+                <!-- <img style="width: 200px; height: auto;" src="youPage/images/FILEHERE"> -->
+                <!-- </div> -->
+
+                <!-- Description of project/artist -->
+                <!-- use new blurb p class for new paragraph -->
                 <p class="blurb">
                   So thrilled to be the first person on the internet to submit a submission to the you page.
                 </p>
@@ -177,6 +191,10 @@
                 <p style="text-align: center; font-family: 'Internet.ttf'; padding-bottom: 2px;">
                   ------------------------------------------------</p>
               </div>
+              <!-- END OF BILLS SECTION -->
+
+
+
 
             </div>
             <img class="collage Bottom" src="images/general/collageBottom.png">
@@ -194,8 +212,7 @@
         <marquee behavior="scroll" direction="left">
           <div class="">
             Maarruu’s new EP “If you’re still listening” has released! &emsp; zugz’s new single “forHer” featuring Ahk
-            Sair has released! &emsp; The IDK Show #0 Ft. IMAAD is out now! &emsp; IMAAD’s new single “222” featuring
-            Pootytang has released!
+            Sair has released! &emsp; The IDK Show #0 Ft. IMAAD is out now! &emsp; IMAAD’s new single “tranCed”!
           </div>
 
         </marquee>
