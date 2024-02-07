@@ -1,3 +1,6 @@
+// THIS IS FOR THE RADIO PAGE
+// Copy and Paste old code from another song, change values.
+
 const trackCover = document.querySelector("#track_cover");
 const trackArtist = document.querySelector("#track_artist");
 const trackTitle = document.querySelector("#track_title");
@@ -61,6 +64,12 @@ const songs = [
     songName: "Melancholy ",
     img: "music/covers/melancholycover.jpg",
     music: "music/songs/melancholy.mp3"
+  },
+  {
+    artistName: "IMAAD",
+    songName: "tranCed ",
+    img: "music/covers/tranCed.jpg",
+    music: "music/songs/tranCed.mp3"
   },
 ];
 
