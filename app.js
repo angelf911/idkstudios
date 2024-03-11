@@ -18,7 +18,7 @@ const container = document.querySelector("#container");
 
 const songs = [
   {
-    artistName: "imaad, pootytang",
+    artistName: "IMAAD, pootytang",
     songName: "222",
     img: "music/covers/222cover.jpg",
     music: "music/songs/222.mp3"
@@ -30,7 +30,7 @@ const songs = [
     music: "music/songs/wonder.mp3"
   },
   {
-    artistName: "zugz, imaad",
+    artistName: "zugz, IMAAD",
     songName: "leaveYa",
     img: "music/covers/leaveYacover.jpg",
     music: "music/songs/leaveYa.mp3"
@@ -42,7 +42,7 @@ const songs = [
     music: "music/songs/undeniable.wav"
   },
   {
-    artistName: "imaad",
+    artistName: "IMAAD",
     songName: "a step",
     img: "music/covers/astepcover.jpg",
     music: "music/songs/astep.mp3"
@@ -71,6 +71,39 @@ const songs = [
     img: "music/covers/tranCed.jpg",
     music: "music/songs/tranCed.mp3"
   },
+  {
+    artistName: "maarruu",
+    songName: "AURA",
+    img: "music/covers/auracover.jpg",
+    music: "music/songs/aura.mp3"
+  },
+  {
+    artistName: "maarruu",
+    songName: "Poison",
+    img: "music/covers/melancholycover.jpg",
+    music: "music/songs/poison.mp3"
+  },
+  {
+    artistName: "sizzle",
+    songName: "hold on for hope",
+    img: "music/covers/theWorldneedsYou.png",
+    music: "music/songs/holdOnforHope.mp3"
+  },
+
+  {
+    artistName: "sizzle",
+    songName: "out of reach",
+    img: "music/covers/theWorldneedsYou.png",
+    music: "music/songs/outOfreach.mp3"
+  },
+
+  {
+    artistName: "sizzle, T!M",
+    songName: "pain of war",
+    img: "music/covers/theWorldneedsYou.png",
+    music: "music/songs/painOfwar.mp3"
+  },
+  
 ];
 
 let isPlaying = false;
