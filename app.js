@@ -103,7 +103,29 @@ const songs = [
     img: "music/covers/theWorldneedsYou.png",
     music: "music/songs/painOfwar.mp3"
   },
-  
+
+  {
+    artistName: "zugz, IMAAD, sizzle",
+    songName: "luv_good (ft. IMAAD, sizzle)",
+    img: "music/covers/04cover.jpg",
+    music: "music/songs/painOfwar.mp3"
+  },
+
+  {
+    artistName: "zugz, Brocko",
+    songName: "lumpia (ft. Brocko)",
+    img: "music/covers/04cover.jpg",
+    music: "music/songs/lumpia.mp3"
+  },
+
+  {
+    artistName: "zugz",
+    songName: "HELLO!",
+    img: "music/covers/04cover.jpg",
+    music: "music/songs/HELLO!.mp3"
+  },
+
+
 ];
 
 let isPlaying = false;
