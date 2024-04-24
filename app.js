@@ -108,7 +108,7 @@ const songs = [
     artistName: "zugz, IMAAD, sizzle",
     songName: "luv_good (ft. IMAAD, sizzle)",
     img: "music/covers/04cover.jpg",
-    music: "music/songs/painOfwar.mp3"
+    music: "music/songs/luv_good.mp3"
   },
 
   {
