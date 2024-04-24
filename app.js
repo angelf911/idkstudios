@@ -74,7 +74,7 @@ const songs = [
   {
     artistName: "maarruu",
     songName: "AURA",
-    img: "music/covers/auracover.jpg",
+    img: "music/covers/auracover.png",
     music: "music/songs/aura.mp3"
   },
   {
