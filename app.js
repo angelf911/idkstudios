@@ -18,18 +18,6 @@ const container = document.querySelector("#container");
 
 const songs = [
   {
-    artistName: "IMAAD, pootytang",
-    songName: "222",
-    img: "music/covers/222cover.jpg",
-    music: "music/songs/222.mp3"
-  },
-  {
-    artistName: "sizzle, zugz",
-    songName: "wonder",
-    img: "music/covers/wondercover.jpg",
-    music: "music/songs/wonder.mp3"
-  },
-  {
     artistName: "zugz, IMAAD",
     songName: "leaveYa",
     img: "music/covers/leaveYacover.jpg",
@@ -53,12 +41,7 @@ const songs = [
     img: "music/covers/polecover.jpg",
     music: "music/songs/pole.mp3"
   },
-  {
-    artistName: "zugz, Ahk Sair",
-    songName: "forHer",
-    img: "music/covers/forHercover.jpg",
-    music: "music/songs/forHer.mp3"
-  },
+
   {
     artistName: "maarruu, Aly",
     songName: "Melancholy ",
@@ -74,7 +57,7 @@ const songs = [
   {
     artistName: "maarruu",
     songName: "AURA",
-    img: "music/covers/auracover (1).png",
+    img: "music/covers/auracover.jpg",
     music: "music/songs/aura.mp3"
   },
   {
@@ -125,7 +108,32 @@ const songs = [
     music: "music/songs/HELLO!.mp3"
   },
 
+  {
+    artistName: "IMAAD",
+    songName: "far away",
+    img: "music/covers/p=fcover.jpg",
+    music: "music/songs/far away.mp3"
+  },
 
+  {
+    artistName: "IMAAD",
+    songName: "whereweare",
+    img: "music/covers/p=fcover.jpg",
+    music: "music/songs/whereweare.mp3"
+  },
+  {
+    artistName: "IMAAD",
+    songName: "p+f",
+    img: "music/covers/p=fcover.jpg",
+    music: "music/songs/p+f.mp3"
+  },
+
+  {
+    artistName: "IMAAD",
+    songName: "omw",
+    img: "music/covers/p=fcover.jpg",
+    music: "music/songs/omw.mp3"
+  },
 ];
 
 let isPlaying = false;
