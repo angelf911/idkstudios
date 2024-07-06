@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <style>
+    #content {
+      width: 99%;
+      height: auto;
+      margin-top: 2px;
+      margin-left: 2px;
+      text-align: center;
+      font-family: 'sysfont.otf';
+      font-size: 16px;
+
+    }
+
+    #header {
+      background-color: #ba8827;
+    }
+
+    .collage {
+      width: 100%;
+      height: auto;
+      margin-top: 2px;
+      margin-left: 2px;
+      text-align: center;
+      font-family: 'sysfont.otf';
+      font-size: 16px;
+    }
+
+    .Bottom {
+      padding-top: 10%;
+    }
+
+    .intro {}
+
+    .paragraph {
+      padding-top: 10vh;
+      margin: 0 5vh;
+    }
+
+    .blurb {
+      margin: 0 5vh;
+      padding-top: 3vh;
+    }
+
+    .yourvideo {
+      padding-top: 3vh;
+
+    }
+
+    .yourname {
+      padding: 2vh;
+    }
+
+    .yourname:hover {
+      cursor: pointer;
+    }
+
+    @font-face {
+      font-family: "Buggie";
+      src: url("fonts/Buggie.ttf") format("opentype");
+    }
+
+
+    .odiwr p {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .odiwr p:hover {
+      cursor: pointer;
+    }
+
+    video {
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {}
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <img src="images/nav/archiveIcon.png" onclick="location.href='idkarchive.org'">
+
+    <img src="images/nav/channelIcon.gif"
+      onclick="window.open('https://youtube.com/@idkstudios_?si=rxS6G2NfZAJHWVZD', '_blank')">
+
+    <img src="images/nav/youIcon.png" onclick="location.href='you.html'">
+
+    <img src="images/nav/radioIcon.png" onclick="location.href='radio.html'">
+    <!-- 
+    <img class="shopdefault-icon" src="images/nav/shopIcon.png" onclick="location.href='shop.html'"> -->
+
+    <img src="images/nav/aboutIcon.png" onclick="location.href='about.html'">
+    <img src="images/nav/shopIcon.png" onclick="location.href='store.idkstudios.org'">
+  </div>
+
+  <div id="main-container">
+    <div id="main-container-style">
+      <!-- box properties here -->
+      <!-- header -->
+      <div id="header">
+        <div class="header-title">
+          <img src="images/general/icons/user.png" id="winicon">
+        </div>
+
+        <h1>you</h1>
+
+        <div class="x">
+          <img src="images/general/icons/xbutton.png" id="homeicon" onclick="location.href='index.html'" class="xicon">
+        </div>
+      </div>
+      <!-- black bar -->
+
+      <div id="black-bar"></div>
+
+      <!-- main box -->
+
+      <div id="main-box">
+        <div id="box-bg">
+          <!-- !! PAGE CONTENT !! -->
+          <div id="content">
+
+            <div class="intro">
+              <img class="collage Top" src="images/general/collageTop.png">
+
+              <div>
+
+                <p class="paragraph">
+                  this page is all about YOU. this is meant to be a place where we can promote other artists and share
+                  YOUR art to the world. either it be music you want to share to the world, a short film you've put your
+                  heart and soul into or even just a graphic that you impressed yourself with and want to show off. send
+                  something to the email or join the discord and share your stuff there, and if we mess with it we'll
+                  put
+                  it up here. make sure to tell us about your story in your submission. free of charge, now and forever.
+                </p>
+
+                <p>
+                  this is for YOU.
+                </p>
+              </div>
+
+              <p style="text-align: center; font-family: 'Internet.ttf';  padding-top: 15%;">
+                ------------------------------------------------</p>
+
+              <!-- THIS IS BILL'S SECTION  (basically the format for all submissions)-->
+              <div class="part">
+
+                <!-- Person's Name/Alias -->
+
+                <p style="text-align: center; color: blue; font-weight: bold;  class=" yourname">
+                  <a onclick="window.open('https: //https://www.youtube.com/@idkstudios_', '_blank' )"> Bill Odiwuor
+                    Kawaka</a>
+                </p>
+
+                <!-- Preffered video (MP4) -->
+                <div class="yourvideo">
+                  <video autoplay playsinline muted width=200px height=auto loop>
+                    <source src="youPage/videos/odiwr2.mp4" type="video/mp4" />
+                  </video>
+
+                </div>
+
+                <!-- Prefferd Image -->
+                <!-- <div class="yourimage"> -->
+                <!-- put path to image in the src -->
+                <!-- <img style="width: 200px; height: auto;" src="youPage/images/FILEHERE"> -->
+                <!-- </div> -->
+
+                <!-- Description of project/artist -->
+                <!-- use new blurb p class for new paragraph -->
+                <p class="blurb">
+                  So thrilled to be the first person on the internet to submit a submission to the you page.
+                </p>
+
+                <p class="blurb" style="padding-bottom: 5%;">
+                  I began learning blender and 3d modeling back in 2020 out of boredom and I never thought I would reach
+                  the point I am at now. It was like a gateway into my passion of the arts. Since then I've continue to
+                  grow as an artist, learning: vfx, traditional drawing, animation, graphic design, piano, videography
+                  and
+                  so much more.
+                  Everyday, im so glad to be able to share my journey with the people around me.
+                </p>
+
+                <p style="text-align: center; font-family: 'Internet.ttf'; padding-bottom: 2px;">
+                  ------------------------------------------------</p>
+              </div>
+              <!-- END OF BILLS SECTION -->
+
+
+
+
+            </div>
+            <img class="collage Bottom" src="images/general/collageBottom.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="taskbar">
+      <div class="start-box">
+        <button class="start-button" onclick="location.href='index.html'">idk studios</button>
+      </div>
+
+      <div class="news-bar">
+        <marquee behavior="scroll" direction="left">
+          <div class="">
+            sizzle's debut mixtape "the world needs you" is available now! &emsp; zugz's new EP "04'" is out now! &emsp;
+            "IDK MAG" VOL.1 is out now! &emsp; IMAAD's debut mixtape "p=f" is out now!
+          </div>
+
+        </marquee>
+      </div>
+
+      <!-- Add more buttons as needed -->
+      <div class="system-tray-icons">
+        <div class="system-tray-icon"><img src="images/taskbar/instagram.png"
+            onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')">
+        </div>
+        <div class="system-tray-icon"><img src="images/taskbar/tiktok.png"
+            onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')">
+        </div>
+        <div class="system-tray-icon"><img src="images/taskbar/twitter.png"
+            onclick="window.open('https://twitter.com/idkzugz?s=21&t=tu_387E8CI51JXNZHh9f0A', '_blank')">
+        </div>
+        <div class="system-tray-icon"><img src="images/taskbar/discord.png"
+            onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')">
+        </div>
+        <div class="system-tray-icon"><img src="images/taskbar/tumblr.png"
+            onclick="window.open('https://idk-studios.tumblr.com/', '_blank')">
+        </div>
+        <div class="system-tray-icon"><img src="images/taskbar/patreon.png"
+            onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')">
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Set the time limit (in milliseconds) for considering the user as AFK
+      const afkTimeLimit = 480000; // 8 minutes
+      let afkTimer;
+      let audioPlaying = false;
+
+      // Elements to show/hide when AFK
+      const elementsToHide = document.querySelectorAll('body > *');
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(255, 255, 255)'; // Semi-transparent white
+      overlay.style.display = 'none';
+      overlay.style.zIndex = '9998';
+
+      const afkMessage = document.createElement('div');
+      afkMessage.innerText = 'Are you still here? :(';
+      afkMessage.style.position = 'fixed';
+      afkMessage.style.top = '50%';
+      afkMessage.style.left = '50%';
+      afkMessage.style.transform = 'translate(-50%, -50%)';
+      afkMessage.style.color = 'black';
+      afkMessage.style.fontSize = '14px';
+      afkMessage.style.zIndex = '9999';
+      afkMessage.style.display = 'none';
+      afkMessage.style.backgroundColor = 'transparent';
+
+      // Function to reset the timer and hide the AFK message and overlay
+      function resetAfkTimer() {
+        clearTimeout(afkTimer);
+        afkTimer = setTimeout(() => {
+          if (!audioPlaying) {
+            overlay.style.display = 'block';
+            afkMessage.style.display = 'block';
+          }
+        }, afkTimeLimit);
+        hideAfkMessage();
+      }
+
+      // Function to hide the AFK message and overlay
+      function hideAfkMessage() {
+        overlay.style.display = 'none';
+        afkMessage.style.display = 'none';
+      }
+
+      // Event listeners to reset the AFK timer
+      window.addEventListener('mousemove', resetAfkTimer);
+      window.addEventListener('keypress', resetAfkTimer);
+
+      // Initialize the AFK timer
+      resetAfkTimer();
+
+      // Function to handle returning from AFK
+      function returnFromAfk() {
+        hideAfkMessage();
+        clearTimeout(afkTimer);
+        afkTimer = setTimeout(() => {
+          if (!audioPlaying) {
+            overlay.style.display = 'block';
+            afkMessage.style.display = 'block';
+          }
+        }, afkTimeLimit);
+      }
+
+      // Event listener for clicks on the screen to return from AFK
+      document.addEventListener('click', returnFromAfk);
+
+      // Check if audio is playing on the page
+      function checkForAudioPlaying() {
+        const mediaElements = document.querySelectorAll('audio, video');
+        for (const mediaElement of mediaElements) {
+          if (!mediaElement.paused) {
+            audioPlaying = true;
+            return;
+          }
+        }
+        audioPlaying = false;
+      }
+
+      // Check for audio playing every second
+      setInterval(checkForAudioPlaying, 1000);
+
+      // Append the overlay and AFK message to the body
+      document.body.appendChild(overlay);
+      document.body.appendChild(afkMessage);
+
+      // ------------------------------------------------------------------------------------------------------ 
+
+      // Retrieve the latest video from the YouTube API
+      function getLatestVideo() {
+        // Your YouTube Data API request code here
+        // Make an API call to retrieve the latest video from the "idkstudios" channel
+        // Parse the response and extract the video ID
+
+        const channelId = 'UCzSoLVZnzylRG6377i87eUA';
+        const apiKey = 'AIzaSyDVUGVR4mtvbNrO0mpU-UTD-EMj56y7OoE';
+        const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=1&order=date&type=video&key=${apiKey}`;
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            const videoId = data.items[0].id.videoId;
+            const iframe = document.getElementById('youtube-iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+
+      // Call the function to get the latest video when the page loads
+      getLatestVideo();
+
+      // ------------------------------------------------------------------------------------------------------
+      // Get the Start button element
+      const startButton = document.querySelector('.start-button');
+
+      // Update the Start button text with the current time
+      function updateStartTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        startButton.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Update the Start button text initially
+      updateStartTime();
+
+      // Update the Start button text every second
+      setInterval(updateStartTime, 1000);
+
+    </script>
+</body>
+
+</html>
