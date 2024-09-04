@@ -134,6 +134,48 @@ const songs = [
     img: "music/covers/p=fcover.jpg",
     music: "music/songs/omw.mp3"
   },
+
+  {
+    artistName: "idk studios",
+    songName: "WIT U",
+    img: "music/covers/WIT U_track_cover.jpg",
+    music: "music/songs/WIT U.mp3"
+  },
+
+
+  {
+    artistName: "idk studios",
+    songName: "MAKEIT!",
+    img: "music/covers/WIT U_track_cover.jpg",
+    music: "music/songs/MAKEIT!.mp3"
+  },
+
+  {
+    artistName: "idk studios",
+    songName: "LOOK OF LUV",
+    img: "music/covers/WIT U_track_cover.jpg",
+    music: "music/songs/LOOK OF LUV.mp3"
+  },
+
+ {
+    artistName: "idk studios",
+    songName: "SUMBODY",
+    img: "music/covers/SUMBODY_track_cover.jpg",
+    music: "music/songs/SUMBODY.mp3"
+  },
+
+{
+    artistName: "zugz",
+    songName: "Come thru",
+    img: "music/covers/Come thru_track_cover.jpg",
+    music: "music/songs/Come thru.mp3"
+  },
+{
+    artistName: "IMAAD",
+    songName: "she don't want my flowers",
+    img: "music/covers/she don't want my flowers_track_cover.jpg",
+    music: "music/songs/she don't want my flowers.mp3"
+  },
 ];
 
 let isPlaying = false;
