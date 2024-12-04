@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d6d3ce;
+            color: black;
+            margin: 0;
+        }
+        #chat-container {
+            padding: 10px;
+            max-width: 600px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .author {
+            font-weight: bold;
+            color: #7289da;
+        }
+        .content {
+            color: black;
+        }
+        .image {
+            display: block;
+            max-width: 300px; /* Set your desired maximum width */
+            width: 100%; /* Ensure responsiveness */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #7289da;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+
+    <script>
+        
+        async function fetchChat() {
+            try {
+                const response = await fetch('http://35.175.137.253:5001/chat'); // EC2 back-end
+                const data = await response.json();
+
+                const container = document.getElementById('chat-container');
+                container.innerHTML = ''; // Clear existing messages
+
+                data.forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message');
+
+                    const authorDiv = document.createElement('div');
+                    authorDiv.classList.add('author');
+                    authorDiv.textContent = msg.author;
+
+                    // Set the color of the username
+                    authorDiv.style.color = getUserColor(msg.author);
+
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.classList.add('content');
+
+                    // Render text content
+                    const urlRegex = /(https?:\/\/[^\s]+\.(?:png|jpg|jpeg|gif))/g;
+                    const matches = msg.content.match(urlRegex);
+
+                    if (matches) {
+                        // Remove the links from the text content if they are images/GIFs
+                        const cleanedContent = msg.content.replace(urlRegex, '').trim();
+                        contentDiv.textContent = cleanedContent;
+
+                        // Display images/GIFs
+                        matches.forEach(match => {
+                            const img = document.createElement('img');
+                            img.src = match;
+                            img.alt = "Embedded Media";
+                            img.classList.add('image');
+                            contentDiv.appendChild(img);
+                        });
+                    } else {
+                        // If no images/GIFs are present, show the text content as is
+                        contentDiv.textContent = msg.content;
+                    }
+
+                    messageDiv.appendChild(authorDiv);
+                    messageDiv.appendChild(contentDiv);
+
+                    // Check for and display attached files
+                    if (msg.attachments && msg.attachments.length > 0) {
+                        msg.attachments.forEach(attachment => {
+                            const img = document.createElement('img');
+                            img.src = attachment;
+                            img.alt = "Attachment";
+                            img.classList.add('image');
+                            messageDiv.appendChild(img);
+                        });
+                    }
+
+                    container.appendChild(messageDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching chat data:', error);
+            }
+        }
+
+        // Fetch chat every 5 seconds
+        setInterval(fetchChat, 5000);
+        fetchChat(); // Initial fetch
+        
+        // Function to generate a consistent color for each user based on their name
+        function getUserColor(username) {
+            let hash = 0;
+            for (let i = 0; i < username.length; i++) {
+                hash = username.charCodeAt(i) + ((hash << 5) - hash);
+            }
+
+            // Generate RGB values based on the hash
+            let r = (hash >> 16) & 0xFF;
+            let g = (hash >> 8) & 0xFF;
+            let b = hash & 0xFF;
+
+            // Adjust RGB values to fall within a "lower contrast" range (e.g., 50-180)
+            r = 40 + (r % 130); // Ensure r is between 50 and 180
+            g = 50 + (g % 130); // Ensure g is between 50 and 180
+            b = 60 + (b % 130); // Ensure b is between 50 and 180
+
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+
+    </script>
+</body>
+</html>
