@@ -49,71 +49,60 @@
     <div id="chat-container"></div>
 
     <script>
-        async function fetchChat() {
+                async function fetchChat() {
             try {
+                console.log('Fetching messages...');
                 const response = await fetch('https://api.idkstudios.org/chat');
+                
+                if (!response.ok) {
+                    console.error('Error: Failed to fetch chat messages:', response.statusText);
+                    return;
+                }
+        
                 const data = await response.json();
-
+                console.log('Fetched data:', data);
+        
                 const container = document.getElementById('chat-container');
                 container.innerHTML = ''; // Clear existing messages
-
+        
                 data.forEach(msg => {
                     const messageDiv = document.createElement('div');
                     messageDiv.classList.add('message');
-
+        
                     const authorDiv = document.createElement('div');
                     authorDiv.classList.add('author');
                     authorDiv.textContent = msg.author;
-
-                    // Set a consistent color for the username
-                    authorDiv.style.color = getUserColor(msg.author);
-
+        
                     const contentDiv = document.createElement('div');
                     contentDiv.classList.add('content');
-
-                    // Render text content and handle embedded media
-                    const urlRegex = /(https?:\/\/[^\s]+\.(?:png|jpg|jpeg|gif))/g;
-                    const matches = msg.content.match(urlRegex);
-
-                    if (matches) {
-                        const cleanedContent = msg.content.replace(urlRegex, '').trim();
-                        contentDiv.textContent = cleanedContent;
-
-                        matches.forEach(match => {
-                            const img = document.createElement('img');
-                            img.src = match;
-                            img.alt = "Embedded Media";
-                            img.classList.add('image');
-                            contentDiv.appendChild(img);
-                        });
-                    } else {
-                        contentDiv.textContent = msg.content;
-                    }
-
+                    contentDiv.textContent = msg.content;
+        
                     messageDiv.appendChild(authorDiv);
                     messageDiv.appendChild(contentDiv);
-
-                    // Display attachments
+        
                     if (msg.attachments && msg.attachments.length > 0) {
                         msg.attachments.forEach(attachment => {
                             const img = document.createElement('img');
                             img.src = attachment;
                             img.alt = "Attachment";
-                            img.classList.add('image');
+                            img.style.maxWidth = '100%';
+                            img.style.border = '1px solid #444';
+                            img.style.borderRadius = '5px';
+                            img.style.marginTop = '10px';
                             messageDiv.appendChild(img);
                         });
                     }
-
+        
                     container.appendChild(messageDiv);
                 });
             } catch (error) {
                 console.error('Error fetching chat data:', error);
             }
         }
-
-        // Fetch chat every 5 seconds
-        setInterval(fetchChat, 5000);
+        
+        setInterval(fetchChat, 1000); // Fetch every second
         fetchChat(); // Initial fetch
+
 
         // Function to generate a consistent color for each user based on their name
         function getUserColor(username) {
