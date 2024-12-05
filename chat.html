@@ -10,18 +10,23 @@
             background-color: #d6d3ce;
             color: black;
             margin: 0;
+            padding: 20px;
         }
         #chat-container {
             padding: 10px;
             max-width: 600px;
+            margin: auto;
         }
         .message {
             margin: 10px 0;
             padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
         }
         .author {
             font-weight: bold;
-            color: #7289da;
+            margin-bottom: 5px;
         }
         .content {
             color: black;
@@ -34,7 +39,6 @@
             border-radius: 5px;
             margin-top: 10px;
         }
-
         a {
             color: #7289da;
             text-decoration: none;
@@ -48,55 +52,72 @@
     <div id="chat-container"></div>
 
     <script>
-       async function fetchChat() {
-    try {
-        const response = await fetch('https://api.idkstudios.org/chat');
-        const data = await response.json();
+        async function fetchChat() {
+            try {
+                const response = await fetch('https://api.idkstudios.org/chat');
+                const data = await response.json();
 
-        const container = document.getElementById('chat-container');
-        container.innerHTML = ''; // Clear existing messages
+                const container = document.getElementById('chat-container');
+                container.innerHTML = ''; // Clear existing messages
 
-        data.forEach(msg => {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
+                data.forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message');
 
-            const authorDiv = document.createElement('div');
-            authorDiv.classList.add('author');
-            authorDiv.textContent = msg.author;
+                    const authorDiv = document.createElement('div');
+                    authorDiv.classList.add('author');
+                    authorDiv.textContent = msg.author;
 
-            const contentDiv = document.createElement('div');
-            contentDiv.classList.add('content');
-            contentDiv.textContent = msg.content;
+                    // Set a consistent color for the username
+                    authorDiv.style.color = getUserColor(msg.author);
 
-            messageDiv.appendChild(authorDiv);
-            messageDiv.appendChild(contentDiv);
+                    const contentDiv = document.createElement('div');
+                    contentDiv.classList.add('content');
 
-            // Render images/GIFs
-            if (msg.attachments && msg.attachments.length > 0) {
-                msg.attachments.forEach(attachment => {
-                    const img = document.createElement('img');
-                    img.src = attachment;
-                    img.alt = "Attachment";
-                    img.style.maxWidth = '100%';
-                    img.style.border = '1px solid #444';
-                    img.style.borderRadius = '5px';
-                    img.style.marginTop = '10px';
-                    messageDiv.appendChild(img);
+                    // Render text content and handle embedded media
+                    const urlRegex = /(https?:\/\/[^\s]+\.(?:png|jpg|jpeg|gif))/g;
+                    const matches = msg.content.match(urlRegex);
+
+                    if (matches) {
+                        const cleanedContent = msg.content.replace(urlRegex, '').trim();
+                        contentDiv.textContent = cleanedContent;
+
+                        matches.forEach(match => {
+                            const img = document.createElement('img');
+                            img.src = match;
+                            img.alt = "Embedded Media";
+                            img.classList.add('image');
+                            contentDiv.appendChild(img);
+                        });
+                    } else {
+                        contentDiv.textContent = msg.content;
+                    }
+
+                    messageDiv.appendChild(authorDiv);
+                    messageDiv.appendChild(contentDiv);
+
+                    // Display attachments
+                    if (msg.attachments && msg.attachments.length > 0) {
+                        msg.attachments.forEach(attachment => {
+                            const img = document.createElement('img');
+                            img.src = attachment;
+                            img.alt = "Attachment";
+                            img.classList.add('image');
+                            messageDiv.appendChild(img);
+                        });
+                    }
+
+                    container.appendChild(messageDiv);
                 });
+            } catch (error) {
+                console.error('Error fetching chat data:', error);
             }
+        }
 
-            container.appendChild(messageDiv);
-        });
-    } catch (error) {
-        console.error('Error fetching chat data:', error);
-    }
-}
+        // Fetch chat every 5 seconds
+        setInterval(fetchChat, 1);
+        fetchChat(); // Initial fetch
 
-// Fetch chat every 5 seconds
-setInterval(fetchChat, 5000);
-fetchChat(); // Initial fetch
-
-        
         // Function to generate a consistent color for each user based on their name
         function getUserColor(username) {
             let hash = 0;
@@ -104,20 +125,16 @@ fetchChat(); // Initial fetch
                 hash = username.charCodeAt(i) + ((hash << 5) - hash);
             }
 
-            // Generate RGB values based on the hash
             let r = (hash >> 16) & 0xFF;
             let g = (hash >> 8) & 0xFF;
             let b = hash & 0xFF;
 
-            // Adjust RGB values to fall within a "lower contrast" range (e.g., 50-180)
-            r = 40 + (r % 130); // Ensure r is between 50 and 180
-            g = 50 + (g % 130); // Ensure g is between 50 and 180
-            b = 60 + (b % 130); // Ensure b is between 50 and 180
+            r = 40 + (r % 130); // Low contrast range
+            g = 50 + (g % 130);
+            b = 60 + (b % 130);
 
             return `rgb(${r}, ${g}, ${b})`;
         }
-
-
     </script>
 </body>
 </html>
