@@ -49,7 +49,11 @@
 
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
 <script>
-    const socket = io('https://api.idkstudios.org'); // Replace with your secure WebSocket endpoint
+    const socket = io('https://api.idkstudios.org', {
+        transports: ['websocket'], // Use WebSocket transport explicitly
+        upgrade: false,            // Disable fallback to long polling
+    });
+
 
     async function fetchChat() {
         try {
