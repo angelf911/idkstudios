@@ -48,10 +48,14 @@
     <div id="chat-container"></div>
 
 <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    
 <script>
     const socket = io('https://api.idkstudios.org', {
-    transports: ['websocket'],
+    transports: ['websocket'], // Ensure WebSocket transport is used
+    upgrade: true,             // Allow upgrading from polling to WebSocket
+    autoConnect: true          // Automatically reconnect if disconnected
 });
+
 
 
 
