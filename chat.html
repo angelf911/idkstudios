@@ -50,9 +50,9 @@
 <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
 <script>
     const socket = io('https://api.idkstudios.org', {
-        transports: ['websocket'], // Use WebSocket transport explicitly
-        upgrade: false,            // Disable fallback to long polling
-    });
+    transports: ['websocket'],
+});
+
 
 
     async function fetchChat() {
