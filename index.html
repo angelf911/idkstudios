@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://idkstudios.s3.us-east-2.amazonaws.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://idkstudios.s3.us-east-2.amazonaws.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://idkstudios.s3.us-east-2.amazonaws.com/favicon-16x16.png">
+<link rel="manifest" href="https://idkstudios.s3.us-east-2.amazonaws.com/site.webmanifest">
+<title>idk studios</title>
+
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    #content {
+      width: 99%;
+      margin: 2px auto;
+      text-align: center;
+    }
+
+    #header {
+        background-color: #04479b;
+    }
+
+    iframe {
+      width: 60vh;
+      height: 34vh;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 6%;
+        margin-top: 9%
+    }
+
+    .credits {
+        text-align: center;
+    }
+
+    .news-item {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .news-item p {
+      margin: 0 0 5px;
+      font-size: 14px;
+      color: #262435;
+    }
+
+    .news-item p strong {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .news-item img {
+      margin: 10px auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      width: 20%;
+      -webkit-filter: drop-shadow(2px 2px 4px #222);
+      transition: transform 0.2s;
+    }
+
+    .news-item img:hover {
+      transform: scale(0.9);
+    }
+
+    .tagline {
+        transition: transform 0.2s;
+    }
+
+    .tagline:hover {
+        transform: scale(1.1);
+    }
+
+    .tagline:hover span {
+    display: none;
+    }
+
+    .tagline:hover:before {
+        content: "click on the time to get back home!";
+        color: blue;
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: auto;
+        max-height: 200px;
+      }
+    }
+
+    @media (max-width: 415px) {
+      iframe {
+        height: auto;
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png" onclick="location.href='archive.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/channelIcon.gif" onclick="window.open('https://www.youtube.com/@idkstudiosorg', '_blank')">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/blogIcon.png" onclick="location.href='blog.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/radioIcon.png" onclick="location.href='radio.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/aboutIcon.png" onclick="location.href='about.html'">
+  </div>
+
+  <div id="main-container">
+    <div id="main-container-style">
+      <div id="header">
+        <div class="header-title">
+          <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images\icons\page\tree.png" id="winicon">
+        </div>
+        <h1>home</h1>
+        <button onclick="location.href='index.html'" title="Close">X</button>
+      </div>
+
+      <div id="black-bar"></div>
+
+      <div id="main-box">
+        <div id="box-bg">
+          <div id="content">
+            <p class="tagline"><span>we make anything and everything</span></p>
+          </div>
+
+          <div class="iframe-container">
+            <iframe
+              id="youtube-iframe"
+              src="https://www.youtube.com/embed?listType=playlist&list=UUCVkYOlUfjYtLfcHll0tp0Sg"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="news-section">
+            <h2 class="news-header"><u>news</u></h2>
+            <div id="news-list"></div>
+          </div>
+
+          <p class="credits">~ site by <a href="https://billkawaka.com" target="_blank">@odiwr</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="taskbar">
+    <div class="start-box">
+      <button class="start-button" onclick="location.href='index.html'">idk studios</button>
+    </div>
+
+    <div class="news-bar">
+        <marquee behavior="scroll" direction="left">
+          <div id="news-bar-content"></div>
+        </marquee>
+      </div>
+      
+
+    <div class="system-tray-icons">
+      <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/instagram.png" onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')"></div>
+      <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/tiktok.png" onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')"></div>
+      <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/twitter.png" onclick="window.open('https://twitter.com/idkzugz?s=21&t=tu_387E8CI51JXNZHh9f0A', '_blank')"></div>
+      <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/discord.png" onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')"></div>
+      <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/patreon.png" onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
+    </div>
+  </div>
+
+  <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://idkstudios.s3.us-east-2.amazonaws.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://idkstudios.s3.us-east-2.amazonaws.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://idkstudios.s3.us-east-2.amazonaws.com/favicon-16x16.png">
+<link rel="manifest" href="https://idkstudios.s3.us-east-2.amazonaws.com/site.webmanifest">
+<title>idk studios</title>
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    #content {
+      width: 99%;
+      margin: 2px auto;
+      text-align: center;
+    }
+
+    #header {
+  background-color: #8b8b8b;
+}
+
+
+
+    .text-container {
+            display: flex;
+            margin: 0 auto;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .image-container {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image-container img {
+            margin-top: 15px;
+            width: 50%;
+        }
+
+
+    .news-item img:hover {
+      transform: scale(0.9);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: auto;
+        max-height: 200px;
+      }
+    }
+
+    @media (max-width: 415px) {
+      iframe {
+        height: auto;
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <div id="nav">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png" onclick="location.href='archive.html'">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/channelIcon.gif" onclick="window.open('https://www.youtube.com/@idkstudiosorg', '_blank')">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/blogIcon.png" onclick="location.href='blog.html'">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/radioIcon.png" onclick="location.href='radio.html'">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/aboutIcon.png" onclick="location.href='about.html'">
+      </div>
+
+  <div id="main-container">
+    <div id="main-container-style">
+        <div id="header">
+            <div class="header-title">
+              <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/globe.png" id="winicon" alt="Globe Icon">
+            </div>
+            <h1>about</h1>
+            <button onclick="location.href='index.html'" title="Close">X</button>
+          </div>
+          
+
+
+      <div id="black-bar"></div>
+
+      <div id="main-box">
+        <div id="box-bg">
+
+
+          <div class="text-container">
+            <p>
+                idk studios is a creative collective founded by friends that want to express their passions through a variety of mediums. 
+                our aim is to bring together other creatives who have a vision.
+            </p>
+            <p>
+                we make anything and everything for anyone.
+            </p>
+            <div class="image-container">
+                <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images\photos\idk23.jpg">
+            </div>
+    
+            <p>
+                <a target="blank_" href="mailto:idkstudiosinc@gmail.com"> idkstudiosinc@gmail.com </a>
+            </p>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="taskbar">
+    <div class="start-box">
+      <button class="start-button" onclick="location.href='index.html'">idk studios</button>
+    </div>
+
+    <div class="news-bar">
+        <marquee behavior="scroll" direction="left">
+          <div id="news-bar-content"></div>
+        </marquee>
+      </div>
+      
+
+      <div class="system-tray-icons">
+        <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/instagram.png" onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')"></div>
+        <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/tiktok.png" onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')"></div>
+        <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/twitter.png" onclick="window.open('https://twitter.com/idkzugz?s=21&t=tu_387E8CI51JXNZHh9f0A', '_blank')"></div>
+        <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/discord.png" onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')"></div>
+        <div class="system-tray-icon"><img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/patreon.png" onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
+      </div>
+  </div>
+
+  <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/script.js"></script>
+</body>
+
+</html>
