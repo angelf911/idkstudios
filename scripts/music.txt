@@ -1,0 +1,151 @@
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/222.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers
+222
+IMAAD, Pootytang
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/astep.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/astepcover.jpg
+a step
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/aura.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/auracover.png
+AURA
+maarruu
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/Come thru.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/Come thru_track_cover.jpg
+Come thru
+zugz
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/undeniable.wav
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/undeniablecover.jpg
+undeniable
+sizzle
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/p+f.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/p=fcover.jpg
+p+f
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/melancholy.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/melancholycover.jpg
+Melancholy
+maarruu, Aly
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/whereweare..mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/
+whereweare
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/LOOK OF LUV.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/BUMp1cover.jpg
+LOOK OF LUV
+idk studios
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/pole.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/
+pole
+maarruu
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/luv_good.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/04cover.jpg
+luv_good
+zugz, IMAAD, sizzle
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/
+leaveYA
+zugz, IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/outOfreach.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers
+out of reach
+sizzle
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/painOfwar.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/theWorldneedsYou.png
+pain of war
+sizzle, T!M
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/HELLO!.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/04cover.jpg
+HELLO!
+zugz
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/omw.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/p=fcover.jpg
+omw
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/WIT U.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/BUMp1cover.jpg
+WIT U
+idk studios
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/lumpia.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/04cover.jpg
+lumpia
+zugz, Brocko
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/she don_t want my flowers.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/she don_t want my flowers_track_cover.jpg
+she don't want my flowers
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/tranCed.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/tranCed.jpg
+tranCed
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/far away.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/tranCed.jpg
+far away
+IMAAD
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/MAKEIT!.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/BUMp1cover.jpg
+MAKEIT!
+idk studios
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/SUMBODY.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/SUMBODY_track_cover.jpg
+SUMBODY
+idk studios
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/holdOnforHope.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/
+hold on for hope
+sizzle
+none
+---
+https://idkstudios.s3.us-east-2.amazonaws.com/songs/melancholy.mp3
+https://idkstudios.s3.us-east-2.amazonaws.com/images/covers/melancholycover.jpg
+Poison
+maarruu
+none
+---
