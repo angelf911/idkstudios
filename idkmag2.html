@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <title>idk studios</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    #main-box {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #header {
+      background-color: #2ba3fc;
+
+    }
+
+    h1 {
+      color: black;
+    }
+
+    .gallery img:hover {
+      border-color: #2ba3fc;
+    }
+
+
+
+
+    @media (max-width: 768px) {}
+
+    @media (min-width: 0px) and (max-width: 700px) {}
+
+    @media (max-width: 480px) {}
+
+
+
+    @media (min-height: 768px) {}
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png"
+      onclick="location.href='archive.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/channelIcon.gif"
+      onclick="window.open('https://www.youtube.com/@idkstudiosorg', '_blank')">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/blogIcon.png"
+      onclick="location.href='blog.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/radioIcon.png"
+      onclick="location.href='radio.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/aboutIcon.png"
+      onclick="location.href='about.html'">
+  </div>
+
+  <div id="main-container">
+    <div id="main-container-style">
+      <div id="header">
+        <div class="header-title">
+          <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/notepad.png" id="winicon">
+        </div>
+        <h1>idkMAG2</h1>
+        <button onclick="location.href='index.html'" title="Close"><img
+            src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/xButton.png"></button>
+      </div>
+
+      <div id="black-bar"></div>
+
+      <div id="main-box">
+
+        <div class="area">
+          <div class="big">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/cover.jpg" alt="Big Image"
+              id="big-image" class="big-image" onclick="openBigImage()">
+          </div>
+
+          <!-- Small Image Gallery -->
+          <div class="gallery">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/cover.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/1.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/2.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/3.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/4.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/5.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/6.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+            <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag2/7.jpg" loading="lazy"
+              onclick="changeBigImage(this)">
+          </div>
+
+          <!-- Back Button -->
+          <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/arrow.png"
+            onmouseover="this.src='https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/arrowEyes.png'"
+            onmouseout="this.src='https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/arrow.png'"
+            class="back-button" onclick="goBack()">
+        </div>
+
+
+        <div id="taskbar">
+          <div class="start-box">
+            <button class="start-button" onclick="location.href='index.html'">idk studios</button>
+          </div>
+
+          <div class="news-bar">
+            <marquee behavior="scroll" direction="left">
+              <div id="news-bar-content"></div>
+            </marquee>
+          </div>
+
+          <div class="system-tray-icons">
+            <div class="system-tray-icon"><img
+                src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/instagram.png"
+                onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/tiktok.png"
+                onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/twitter.png"
+                onclick="window.open('https://x.com/_idkstudios', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/discord.png"
+                onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/patreon.png"
+                onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
+          </div>
+        </div>
+
+        <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <title>idk studios</title>
+
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    #content {
+      width: 99%;
+      margin: 2px auto;
+      text-align: center;
+    }
+
+    #header {
+      background-color: #ff2f78;
+    }
+
+    #box-bg {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      /* Three per row max */
+      gap: 5px;
+      /* Space between images */
+      padding: 5px;
+      justify-content: center;
+      height: auto;
+    }
+
+    .image-box {
+      width: 90%;
+      /* Adjust to fit grid cells */
+      aspect-ratio: 1;
+      /* Maintain square aspect ratio */
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: white;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .image-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-box {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .image-box .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      /* Semi-transparent background for contrast */
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.2em;
+      text-align: center;
+      transition: opacity 0.3s;
+      mix-blend-mode: difference;
+      /* Apply color inversion effect */
+      text-shadow: 2px 2px 2px rgb(109, 137, 202);
+    }
+
+
+    .image-box:hover img {
+      filter: blur(2.5px);
+      /* Apply blur effect */
+    }
+
+    .image-box:hover .overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png"
+      onclick="location.href='archive.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/channelIcon.gif"
+      onclick="window.open('https://www.youtube.com/@idkstudiosorg', '_blank')">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/blogIcon.png"
+      onclick="location.href='blog.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/radioIcon.png"
+      onclick="location.href='radio.html'">
+    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/aboutIcon.png"
+      onclick="location.href='about.html'">
+  </div>
+
+  <div id="main-container">
+    <div id="main-container-style">
+      <div id="header">
+        <div class="header-title">
+          <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images\icons\page\camera.png" id="winicon">
+        </div>
+        <h1>archive</h1>
+        <button onclick="location.href='index.html'" title="Close"><img
+            src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/xButton.png"></button>
+      </div>
+
+      <div id="black-bar"></div>
+
+      <div id="main-box">
+        <div id="box-bg">
+          <!-- Collection 1 -->
+          <a href="idkmag0.html" class="image-box">
+            <img loading="lazy" src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag0/cover.jpg"
+              alt="Collection IDK Magazine 0">
+            <div class="overlay">idk mag 0</div>
+          </a>
+          <!-- Collection 2 -->
+          <a href="idkmag1.html" class="image-box">
+            <img loading="lazy" src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/idkmag1/cover.png"
+              alt="Collection IDK Magazine 1">
+            <div class="overlay">idk mag 1</div>
+          </a>
+          <!-- Collection 3 -->
+          <a href="summer24.html" class="image-box">
+            <img loading="lazy" src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/summer24/cover.png"
+              alt="Collection SUMMER 24">
+            <div class="overlay">idk summer 24</div>
+          </a>
+          <!-- Collection 4 -->
+          <a href="idkmag2.html" class="image-box">
+            <img loading="lazy" src="https://idkstudios.s3.us-east-2.amazonaws.com/images\photos\idkmag2\cover.jpg"
+              alt="Collection IDK Magazine 2">
+            <div class="overlay">idk mag 2</div>
+          </a>
+          <!-- Collection 5 -->
+          <a href="awe.html" class="image-box">
+            <img loading="lazy" src="https://idkstudios.s3.us-east-2.amazonaws.com/images/photos/awe/AWE0cover.jpg"
+              alt="Collection AWE">
+            <div class="overlay">awe vol. 1</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="taskbar">
+    <div class="start-box">
+      <button class="start-button" onclick="location.href='index.html'">idk studios</button>
+    </div>
+
+    <div class="news-bar">
+      <marquee behavior="scroll" direction="left">
+        <div id="news-bar-content"></div>
+      </marquee>
+    </div>
+
+    <div class="system-tray-icons">
+      <div class="system-tray-icon"><img
+          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/instagram.png"
+          onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')"></div>
+      <div class="system-tray-icon"><img
+          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/tiktok.png"
+          onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')"></div>
+      <div class="system-tray-icon"><img
+          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/twitter.png"
+          onclick="window.open('https://x.com/_idkstudios', '_blank')"></div>
+      <div class="system-tray-icon"><img
+          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/discord.png"
+          onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')"></div>
+      <div class="system-tray-icon"><img
+          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/patreon.png"
+          onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
+    </div>
+  </div>
+
+  <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/scripts.js"></script>
+
+</body>
+
+</html>
