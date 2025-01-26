@@ -79,7 +79,7 @@ async function fetchLastMessages(channelId) {
       color: getColorForUser(msg.author.username),
       attachments: getAttachments(msg),
       timestamp: msg.createdAt,
-    })).reverse();
+    });
   } catch (error) {
     console.error('Error fetching messages:', error);
   }
