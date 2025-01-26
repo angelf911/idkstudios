@@ -96,14 +96,8 @@
         <div id="box-bg">
 
 
-          <div class="text-container">
+          <div id=messages></div>
 
-            <p>
-              coming soon.
-            </p>
-
-
-          </div>
 
 
         </div>
@@ -141,6 +135,8 @@
           onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
     </div>
   </div>
+
+  <script>function isImageUrl(t){return new Promise((e=>{const n=new Image;n.onload=()=>e(!0),n.onerror=()=>e(!1),n.src=t}))}async function fetchMessages(){try{const t=await fetch("http://localhost:3000/messages");if(!t.ok)throw new Error("Network response was not ok");const e=await t.json(),n=document.getElementById("messages");if(!n)return void console.warn("Messages container not found.");const s=Array.from(n.children).map((t=>t.getAttribute("data-timestamp")));for(const t of e){const e=new Date(t.timestamp).getTime().toString();if(s.includes(e))continue;const a=document.createElement("div");a.classList.add("message"),a.setAttribute("data-timestamp",e),a.innerHTML=`\n                    <span class="author" style="color: ${t.color}">${t.author}:</span>\n                    <span class="content"></span>\n                    <div class="timestamp">${new Date(t.timestamp).toLocaleString()}</div>\n                `;const o=a.querySelector(".content");if(t.content.startsWith("http"))if(await isImageUrl(t.content)){const e=document.createElement("img");e.src=t.content,e.style.width="10%",o.appendChild(e)}else{const e=document.createElement("a");e.href=t.content,e.target="_blank",e.textContent=t.content,o.appendChild(e)}else o.textContent=t.content;if(t.attachments&&t.attachments.length>0){const e=document.createElement("div");e.classList.add("attachments"),t.attachments.forEach((t=>{const n=document.createElement("img");n.src=t,n.style.width="10%",e.appendChild(n)})),a.appendChild(e)}n.prepend(a)}}catch(t){console.error("Fetch error:",t)}}setInterval(fetchMessages,5e3),fetchMessages();</script>
 
   <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/scripts.js"></script>
 </body>
