@@ -73,8 +73,8 @@ async function fetchLastMessages(channelId) {
     const channel = await client.channels.fetch(channelId);
     const fetchedMessages = await channel.messages.fetch({ limit: 25 });
 
-    // Store the messages in reverse order (newest at the top)
-    messages = await Promise.all(
+    // Resolve all messages and then reverse the array
+    const resolvedMessages = await Promise.all(
       fetchedMessages.map(async (msg) => {
         const member = await msg.guild.members.fetch(msg.author.id); // Fetch member to get nickname
         return {
@@ -85,7 +85,10 @@ async function fetchLastMessages(channelId) {
           timestamp: msg.createdAt,
         };
       })
-    ).reverse(); // Reverse to show newest messages first
+    );
+
+    // Reverse the resolved messages array (newest messages at the top)
+    messages = resolvedMessages.reverse();
   } catch (error) {
     console.error('Error fetching messages:', error);
   }
