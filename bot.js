@@ -52,7 +52,7 @@ function getAttachments(message) {
 client.on('messageCreate', async (message) => {
   if (message.channel.id === specificChannelId && !message.author.bot) {
     const member = await message.guild.members.fetch(message.author.id); // Fetch member to get nickname
-    messages.unshift({
+    messages.push({
       content: message.content,
       author: member.nickname || message.author.username, // Use nickname if available
       color: getColorForUser(message.author.username),
@@ -62,10 +62,11 @@ client.on('messageCreate', async (message) => {
 
     // Keep only the latest 25 messages
     if (messages.length > 25) {
-      messages.pop();
+      messages.shift();
     }
   }
 });
+
 
 // Fetch the last 25 messages
 async function fetchLastMessages(channelId) {
