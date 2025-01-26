@@ -57,7 +57,7 @@ client.on('messageCreate', (message) => {
       color: getColorForUser(message.author.username),
       attachments: getAttachments(message),
       timestamp: message.createdAt,
-    });
+    }).reverse();
 
     // Keep only the latest 25 messages
     if (messages.length > 25) {
