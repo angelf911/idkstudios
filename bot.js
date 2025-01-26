@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 // Discord channel configuration
-const specificChannelId = '1313175322245595177'; // Replace with your channel ID
+const specificChannelId = '1333203561206644888'; // Replace with your channel ID
 
 let messages = []; // Store messages from the specific channel
 const userColors = {}; // Map to store random colors for each user
