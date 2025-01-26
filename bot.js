@@ -49,15 +49,16 @@ function getAttachments(message) {
 }
 
 // Listen for new messages
-client.on('messageCreate', (message) => {
+client.on('messageCreate', async (message) => {
   if (message.channel.id === specificChannelId && !message.author.bot) {
+    const member = await message.guild.members.fetch(message.author.id); // Fetch member to get nickname
     messages.unshift({
       content: message.content,
-      author: message.author.username,
+      author: member.nickname || message.author.username, // Use nickname if available
       color: getColorForUser(message.author.username),
       attachments: getAttachments(message),
       timestamp: message.createdAt,
-    }).reverse();
+    });
 
     // Keep only the latest 25 messages
     if (messages.length > 25) {
@@ -73,20 +74,22 @@ async function fetchLastMessages(channelId) {
     const fetchedMessages = await channel.messages.fetch({ limit: 25 });
 
     // Store the messages in reverse order (newest at the top)
-    messages = fetchedMessages
-      .map((msg) => ({
-        content: msg.content,
-        author: msg.author.username,
-        color: getColorForUser(msg.author.username),
-        attachments: getAttachments(msg),
-        timestamp: msg.createdAt,
-      }))
-      .reverse(); // Reverse to show newest messages first
+    messages = await Promise.all(
+      fetchedMessages.map(async (msg) => {
+        const member = await msg.guild.members.fetch(msg.author.id); // Fetch member to get nickname
+        return {
+          content: msg.content,
+          author: member.nickname || msg.author.username, // Use nickname if available
+          color: getColorForUser(msg.author.username),
+          attachments: getAttachments(msg),
+          timestamp: msg.createdAt,
+        };
+      })
+    ).reverse(); // Reverse to show newest messages first
   } catch (error) {
     console.error('Error fetching messages:', error);
   }
 }
-
 
 // Start the bot
 client.once('ready', async () => {
