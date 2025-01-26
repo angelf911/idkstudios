@@ -2,234 +2,278 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="styles.css" rel="stylesheet" type="text/css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <title>idk studios</title>
-  <style>
-    body {
-      font-size: 16px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>idk studios</title>
+    <style>
+        body {
+            padding: 20px;
+            overflow-x: hidden;
+        }
 
-    #content {
-      width: 99%;
-      margin: 2px auto;
-      text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    #header {
-      background-color: #c4ac84;
-    }
+        .message {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            word-wrap: break-word;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .author {
+            font-weight: 700;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .content {
+            margin-left: 10px;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .timestamp {
+            font-size: 0.8em;
+            color: gray;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .attachments img,
+        .content img {
+            width: 10%;
+            height: auto;
+            display: block;
+            margin: 5px 0;
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        #content {
+            width: 99%;
+            margin: 2px auto;
+            text-align: center;
+        }
+
+        #header {
+            background-color: #c4ac84;
+        }
 
 
-    .text-container {
-      display: flex;
-      margin: 0 auto;
-      text-align: center;
-      flex-direction: column;
-    }
+        .text-container {
+            display: flex;
+            margin: 0 auto;
+            text-align: center;
+            flex-direction: column;
+        }
 
-    .image-container {
-      display: inline-block;
-      max-width: 100%;
-      height: auto;
-    }
+        .image-container {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
 
-    .image-container img {
-      margin-top: 15px;
-      width: 50%;
-    }
+        .image-container img {
+            margin-top: 15px;
+            width: 50%;
+        }
 
 
-    .news-item img:hover {
-      transform: scale(0.9);
-    }
+        .news-item img:hover {
+            transform: scale(0.9);
+        }
 
-    @media (max-width: 768px) {
-      iframe {
-        width: auto;
-        max-height: 200px;
-      }
-    }
+        @media (max-width: 768px) {
+            iframe {
+                width: auto;
+                max-height: 200px;
+            }
+        }
 
-    @media (max-width: 415px) {
-      iframe {
-        height: auto;
-        width: 200px;
-      }
-    }
-  </style>
+        @media (max-width: 415px) {
+            iframe {
+                height: auto;
+                width: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div id="nav">
-    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png"
-      onclick="location.href='archive.html'">
-    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/channelIcon.gif"
-      onclick="window.open('https://www.youtube.com/@idkstudiosorg', '_blank')">
-    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/blogIcon.png"
-      onclick="location.href='blog.html'">
-    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/radioIcon.png"
-      onclick="location.href='radio.html'">
-    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/aboutIcon.png"
-      onclick="location.href='about.html'">
-  </div>
+    <div id="nav">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png"
+            onclick="location.href='archive.html'">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/channelIcon.gif"
+            onclick="window.open('https://www.youtube.com/@idkstudiosorg', '_blank')">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/blogIcon.png"
+            onclick="location.href='blog.html'">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/radioIcon.png"
+            onclick="location.href='radio.html'">
+        <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/aboutIcon.png"
+            onclick="location.href='about.html'">
+    </div>
 
-  <div id="main-container">
-    <div id="main-container-style">
-      <div id="header">
-        <div class="header-title">
-          <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images\icons\page\blog.png" id="winicon">
+    <div id="main-container">
+        <div id="main-container-style">
+            <div id="header">
+                <div class="header-title">
+                    <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images\icons\page\blog.png" id="winicon">
+                </div>
+                <h1>blog</h1>
+                <button onclick="location.href='index.html'" title="Close"><img
+                        src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/xButton.png"></button>
+            </div>
+
+            <div id="black-bar"></div>
+
+            <div id="main-box">
+                <div id="box-bg">
+
+
+                    <div id=messages></div>
+
+
+
+                </div>
+            </div>
         </div>
-        <h1>blog</h1>
-        <button onclick="location.href='index.html'" title="Close"><img
-            src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/page/xButton.png"></button>
-      </div>
+    </div>
 
-      <div id="black-bar"></div>
-
-      <div id="main-box">
-        <div id="box-bg">
-
-
-          <div id=messages></div>
-
-
-
+    <div id="taskbar">
+        <div class="start-box">
+            <button class="start-button" onclick="location.href='index.html'">idk studios</button>
         </div>
-      </div>
+
+        <div class="news-bar">
+            <marquee behavior="scroll" direction="left">
+                <div id="news-bar-content"></div>
+            </marquee>
+        </div>
+
+
+        <div class="system-tray-icons">
+            <div class="system-tray-icon"><img
+                    src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/instagram.png"
+                    onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                    src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/tiktok.png"
+                    onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                    src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/twitter.png"
+                    onclick="window.open('https://x.com/_idkstudios', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                    src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/discord.png"
+                    onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')"></div>
+            <div class="system-tray-icon"><img
+                    src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/patreon.png"
+                    onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
+        </div>
     </div>
-  </div>
 
-  <div id="taskbar">
-    <div class="start-box">
-      <button class="start-button" onclick="location.href='index.html'">idk studios</button>
-    </div>
-
-    <div class="news-bar">
-      <marquee behavior="scroll" direction="left">
-        <div id="news-bar-content"></div>
-      </marquee>
-    </div>
-
-
-    <div class="system-tray-icons">
-      <div class="system-tray-icon"><img
-          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/instagram.png"
-          onclick="window.open('https://www.instagram.com/idkstudios_/', '_blank')"></div>
-      <div class="system-tray-icon"><img
-          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/tiktok.png"
-          onclick="window.open('https://www.tiktok.com/@idk.studioss', '_blank')"></div>
-      <div class="system-tray-icon"><img
-          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/twitter.png"
-          onclick="window.open('https://x.com/_idkstudios', '_blank')"></div>
-      <div class="system-tray-icon"><img
-          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/discord.png"
-          onclick="window.open('https://discord.gg/YMzDKmxg4E', '_blank')"></div>
-      <div class="system-tray-icon"><img
-          src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/socials/patreon.png"
-          onclick="window.open('https://www.patreon.com/idkstudios_', '_blank')"></div>
-    </div>
-  </div>
-
-<script>
-  function isImageUrl(url) {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve(true);
-      img.onerror = () => resolve(false);
-      img.src = url;
-    });
-  }
-
-  async function fetchMessages() {
-    try {
-      const response = await fetch("https://your-backend-url.com/messages"); // Replace with your deployed backend URL
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const messages = await response.json();
-      const messagesContainer = document.getElementById("messages");
-      if (!messagesContainer) {
-        console.warn("Messages container not found.");
-        return;
-      }
-
-      // Avoid adding duplicate messages
-      const existingMessages = Array.from(messagesContainer.children).map((node) =>
-        node.getAttribute("data-timestamp")
-      );
-
-      for (const msg of messages) {
-        const timestamp = new Date(msg.timestamp).getTime().toString();
-
-        // Skip duplicates
-        if (existingMessages.includes(timestamp)) {
-          continue;
+    <script>
+        function isImageUrl(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            });
         }
 
-        const messageDiv = document.createElement("div");
-        messageDiv.classList.add("message");
-        messageDiv.setAttribute("data-timestamp", timestamp);
+        async function fetchMessages() {
+            try {
+                const response = await fetch("https://discord-blog-backend.onrender.com/messages"); // Replace with your deployed backend URL
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                const messages = await response.json();
+                const messagesContainer = document.getElementById("messages");
+                if (!messagesContainer) {
+                    console.warn("Messages container not found.");
+                    return;
+                }
 
-        // Add author and timestamp
-        messageDiv.innerHTML = `
+                // Avoid adding duplicate messages
+                const existingMessages = Array.from(messagesContainer.children).map((node) =>
+                    node.getAttribute("data-timestamp")
+                );
+
+                for (const msg of messages) {
+                    const timestamp = new Date(msg.timestamp).getTime().toString();
+
+                    // Skip duplicates
+                    if (existingMessages.includes(timestamp)) {
+                        continue;
+                    }
+
+                    const messageDiv = document.createElement("div");
+                    messageDiv.classList.add("message");
+                    messageDiv.setAttribute("data-timestamp", timestamp);
+
+                    // Add author and timestamp
+                    messageDiv.innerHTML = `
           <span class="author" style="color: ${msg.color}">${msg.author}:</span>
           <span class="content"></span>
           <div class="timestamp">${new Date(msg.timestamp).toLocaleString()}</div>
         `;
 
-        const contentSpan = messageDiv.querySelector(".content");
+                    const contentSpan = messageDiv.querySelector(".content");
 
-        // Handle content as text, image, or link
-        if (msg.content.startsWith("http")) {
-          if (await isImageUrl(msg.content)) {
-            const img = document.createElement("img");
-            img.src = msg.content;
-            img.style.width = "10%";
-            contentSpan.appendChild(img);
-          } else {
-            const link = document.createElement("a");
-            link.href = msg.content;
-            link.target = "_blank";
-            link.textContent = msg.content;
-            contentSpan.appendChild(link);
-          }
-        } else {
-          contentSpan.textContent = msg.content; // Render plain text
+                    // Handle content as text, image, or link
+                    if (msg.content.startsWith("http")) {
+                        if (await isImageUrl(msg.content)) {
+                            const img = document.createElement("img");
+                            img.src = msg.content;
+                            img.style.width = "10%";
+                            contentSpan.appendChild(img);
+                        } else {
+                            const link = document.createElement("a");
+                            link.href = msg.content;
+                            link.target = "_blank";
+                            link.textContent = msg.content;
+                            contentSpan.appendChild(link);
+                        }
+                    } else {
+                        contentSpan.textContent = msg.content; // Render plain text
+                    }
+
+                    // Handle attachments (e.g., images or GIFs)
+                    if (msg.attachments && msg.attachments.length > 0) {
+                        const attachmentsDiv = document.createElement("div");
+                        attachmentsDiv.classList.add("attachments");
+                        msg.attachments.forEach((attachment) => {
+                            const img = document.createElement("img");
+                            img.src = attachment;
+                            img.style.width = "10%";
+                            attachmentsDiv.appendChild(img);
+                        });
+                        messageDiv.appendChild(attachmentsDiv);
+                    }
+
+                    // Prepend the new message to the top
+                    messagesContainer.prepend(messageDiv);
+                }
+            } catch (error) {
+                console.error("Fetch error:", error);
+            }
         }
 
-        // Handle attachments (e.g., images or GIFs)
-        if (msg.attachments && msg.attachments.length > 0) {
-          const attachmentsDiv = document.createElement("div");
-          attachmentsDiv.classList.add("attachments");
-          msg.attachments.forEach((attachment) => {
-            const img = document.createElement("img");
-            img.src = attachment;
-            img.style.width = "10%";
-            attachmentsDiv.appendChild(img);
-          });
-          messageDiv.appendChild(attachmentsDiv);
-        }
+        // Refresh messages every 5 seconds
+        setInterval(fetchMessages, 5000);
+        fetchMessages();
+    </script>
 
-        // Prepend the new message to the top
-        messagesContainer.prepend(messageDiv);
-      }
-    } catch (error) {
-      console.error("Fetch error:", error);
-    }
-  }
-
-  // Refresh messages every 5 seconds
-  setInterval(fetchMessages, 5000);
-  fetchMessages();
-</script>
-
-  <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/scripts.js"></script>
+    <script src="https://idkstudios.s3.us-east-2.amazonaws.com/scripts/scripts.js"></script>
 </body>
 
 </html>
