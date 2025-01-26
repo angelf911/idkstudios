@@ -72,18 +72,21 @@ async function fetchLastMessages(channelId) {
     const channel = await client.channels.fetch(channelId);
     const fetchedMessages = await channel.messages.fetch({ limit: 25 });
 
-    // Store the messages in the correct order
-    messages = fetchedMessages.map((msg) => ({
-      content: msg.content,
-      author: msg.author.username,
-      color: getColorForUser(msg.author.username),
-      attachments: getAttachments(msg),
-      timestamp: msg.createdAt,
-    });
+    // Store the messages in reverse order (newest at the top)
+    messages = fetchedMessages
+      .map((msg) => ({
+        content: msg.content,
+        author: msg.author.username,
+        color: getColorForUser(msg.author.username),
+        attachments: getAttachments(msg),
+        timestamp: msg.createdAt,
+      }))
+      .reverse(); // Reverse to show newest messages first
   } catch (error) {
     console.error('Error fetching messages:', error);
   }
 }
+
 
 // Start the bot
 client.once('ready', async () => {
