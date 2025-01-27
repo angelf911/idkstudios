@@ -49,12 +49,14 @@
         }
 
         .attachments img,
-        .content img {
-            width: 50%;
-            height: auto;
-            display: block;
-            margin: 5px 0;
-        }
+.content img {
+  max-width: 90%; /* Limit the width to 90% of the parent container */
+  height: auto;   /* Maintain the aspect ratio */
+  display: block;
+  margin: 10px auto; /* Center the image and add some spacing */
+  border: 1px solid #ddd; /* Optional: Add a subtle border */
+  border-radius: 5px; /* Optional: Add slightly rounded corners */
+}
 
         body {
             font-size: 16px;
