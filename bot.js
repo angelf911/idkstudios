@@ -30,7 +30,7 @@ const userColors = {}; // Map to store random colors for each user
 function getRandomColor() {
   const colors = [
     '#004fff', '#3f1a63', '#2ec4b6', '#e574bc', '#f41515',
-    '#004f2d', '#99011d', '#ff9505', '#47682c', '#b21fff', '#62a2bf',
+    '#004f2d', '#99011d', '#ff9505', '#5ab349', '#b21fff', '#62a2bf',
   ];
   return colors[Math.floor(Math.random() * colors.length)];
 }
