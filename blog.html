@@ -45,7 +45,6 @@
             font-size: 0.8em;
             color: gray;
             font-family: Arial, sans-serif;
-
         }
 
         .attachments img,
@@ -253,7 +252,7 @@
         msg.attachments.forEach((attachment) => {
           const img = document.createElement("img");
           img.src = attachment;
-          img.style.width = "10%";
+          img.style.width = "30";
           attachmentsDiv.appendChild(img);
         });
         messageDiv.appendChild(attachmentsDiv);
