@@ -215,7 +215,7 @@ function renderNews(items) {
 --------------------------------*/
 async function loadBanner() {
   try {
-    const text = await fetchText('banner.txt');
+    const text = await fetchText('scripts/banner.txt');
     const el = document.getElementById('news-bar-content');
     el.textContent = text.trim();
   } catch (e) {
@@ -375,4 +375,5 @@ async function loadYouTube() {
 </body>
 
 </html>
+
 
