@@ -247,45 +247,106 @@ function ytEmbedUrlFromWatch(url) {
 }
 
 async function loadYouTube() {
+  const iframe = document.getElementById('youtube-iframe');
+
+  // fallback: your live YouTube logic
+  async function fetchLatestFromYouTubeAPI() {
+    const channelId = 'UCVkYOlUfjYtLfcHll0tp0Sg';
+    const apiKey = 'AIzaSyCIWT_UAbdgkynBkhN8t_imyB5iyLdzEik';
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&order=date&type=video&key=${apiKey}`;
+
+    try {
+      const resp = await fetch(url);
+      const data = await resp.json();
+      const videoIds = (data.items || [])
+        .map(item => item.id && item.id.videoId)
+        .filter(Boolean);
+      if (!videoIds.length) return;
+
+      const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoIds.join(',')}&key=${apiKey}`;
+      const dresp = await fetch(detailsUrl);
+      const vdata = await dresp.json();
+
+      // pick first NOT 20–60 seconds
+      let picked = null;
+      for (const video of vdata.items || []) {
+        const duration = video.contentDetails.duration;
+        const match = duration.match(/PT(\d+M)?(\d+S)?/);
+        const minutes = parseInt(match?.[1]?.replace('M', '') || 0, 10);
+        const seconds = parseInt(match?.[2]?.replace('S', '') || 0, 10);
+        const totalSeconds = minutes * 60 + seconds;
+        if (totalSeconds < 20 || totalSeconds > 60) {
+          picked = video.id;
+          break;
+        }
+      }
+      if (!picked) {
+        picked = videoIds[0];
+      }
+      iframe.src = `https://www.youtube.com/embed/${picked}`;
+    } catch (err) {
+      console.warn('YT API fallback failed:', err);
+    }
+  }
+
   try {
     const data = await fetchJSON('video.json');
-    const iframe = document.getElementById('youtube-iframe');
 
+    // 1) manual wins
     if (data.mode === 'manual' && data.manualUrl) {
       const embed = ytEmbedUrlFromWatch(data.manualUrl);
-      if (embed) iframe.src = embed;
+      if (embed) {
+        iframe.src = embed;
+        return;
+      }
+    }
+
+    // 2) latest, but admin already wrote a resolved manualUrl → just use it
+    if (data.mode === 'latest') {
+      if (data.manualUrl) {
+        const embed = ytEmbedUrlFromWatch(data.manualUrl);
+        if (embed) {
+          iframe.src = embed;
+          return;
+        }
+      }
+      // 3) latest, but admin json didn’t have a resolved url → hit YouTube directly
+      await fetchLatestFromYouTubeAPI();
       return;
     }
 
-    if (data.mode === 'latest' && data.channelId) {
-      // We store the resolved latest video URL right in video.json
-      // (admin.html updates it), so just use manualUrl if present.
-      if (data.manualUrl) {
-        const embed = ytEmbedUrlFromWatch(data.manualUrl);
-        if (embed) iframe.src = embed;
-      }
-    }
+    // 4) anything else → fallback to live YouTube
+    await fetchLatestFromYouTubeAPI();
+
   } catch (e) {
     console.warn(e);
+    // couldn’t load video.json → fallback to live YT
+    await fetchLatestFromYouTubeAPI();
   }
 }
+
 
 /* ------------------------------
    Boot
 --------------------------------*/
 (async function init() {
   try {
-    // NEWS
-    const newsTxt = await fetchText('scripts/news.txt');
-    const items = parseNewsTxt(newsTxt);
-    renderNews(items);
+    // only run once even if another script tries
+    if (!window.__IDK_NEWS_RENDERED__) {
+      const newsTxt = await fetchText('scripts/news.txt');
+      const items = parseNewsTxt(newsTxt);
+      renderNews(items);
+      window.__IDK_NEWS_RENDERED__ = true;
+    }
   } catch (e) {
     console.warn(e);
   }
 
-  loadBanner();  // banner.txt → marquee
-  loadYouTube(); // video.json → iframe
+  loadBanner();
+  loadYouTube();
 })();
+
+
 </script>
 
 
@@ -375,6 +436,5 @@ async function loadYouTube() {
 </body>
 
 </html>
-
 
 
