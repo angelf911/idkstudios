@@ -110,6 +110,167 @@
   </style>
 </head>
 
+<script>
+/* ------------------------------
+   Helpers: fetch text/json safely
+--------------------------------*/
+async function fetchText(path) {
+  const res = await fetch(path, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch " + path);
+  return res.text();
+}
+async function fetchJSON(path) {
+  const res = await fetch(path, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch " + path);
+  return res.json();
+}
+
+/* ------------------------------
+   NEWS: parse news.txt blocks
+   Format (you already use):
+   ----
+   MM/DD/YY
+   <description line>
+   <imageOrGifUrl | "none">
+   <linkUrl | "none">
+   ----
+--------------------------------*/
+function parseNewsTxt(txt) {
+  const blocks = txt.split('----').map(s => s.trim()).filter(Boolean);
+  const items = [];
+  for (const block of blocks) {
+    const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+    if (lines.length >= 2) {
+      const [date, description, image = "none", link = "none"] = lines;
+      items.push({ date, description, image, link });
+    }
+  }
+  // Sort newest first by date (MM/DD/YY)
+  items.sort((a, b) => {
+    const toDate = (m) => {
+      const [mm, dd, yy] = m.date.split('/').map(x => x.trim());
+      // resolve year 2-digit -> 20YY
+      const fullYear = Number(yy) + 2000;
+      return new Date(fullYear, Number(mm) - 1, Number(dd));
+    };
+    return toDate(b) - toDate(a);
+  });
+  return items;
+}
+
+/* Render News to #news-list */
+function renderNews(items) {
+  const list = document.getElementById('news-list');
+  list.innerHTML = '';
+  items.forEach(({ date, description, image, link }) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'news-item';
+
+    const p = document.createElement('p');
+    p.innerHTML = `<strong>${date}</strong> — ${description}`;
+    wrap.appendChild(p);
+
+    if (image && image.toLowerCase() !== 'none') {
+      const img = document.createElement('img');
+      img.src = image;
+      img.alt = description;
+      if (link && link.toLowerCase() !== 'none') {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => window.open(link, '_blank'));
+      }
+      wrap.appendChild(img);
+    } else if (link && link.toLowerCase() !== 'none') {
+      const a = document.createElement('a');
+      a.href = link;
+      a.target = '_blank';
+      a.textContent = 'Read more';
+      wrap.appendChild(a);
+    }
+
+    list.appendChild(wrap);
+  });
+}
+
+/* ------------------------------
+   BANNER (bottom news bar)
+   banner.txt = one-line marquee text
+--------------------------------*/
+async function loadBanner() {
+  try {
+    const text = await fetchText('banner.txt');
+    const el = document.getElementById('news-bar-content');
+    el.textContent = text.trim();
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
+/* ------------------------------
+   YOUTUBE video
+   video.json format:
+   {
+     "mode": "manual" | "latest",
+     "manualUrl": "https://www.youtube.com/watch?v=XXXX",
+     "channelId": "UCxxxxxxxxxxxx"   // used only if mode=latest
+   }
+--------------------------------*/
+function ytEmbedUrlFromWatch(url) {
+  try {
+    // accept youtu.be/ID or youtube.com/watch?v=ID
+    const u = new URL(url);
+    if (u.hostname.includes('youtu.be')) {
+      return `https://www.youtube.com/embed/${u.pathname.replace('/', '')}`;
+    }
+    const id = u.searchParams.get('v');
+    return id ? `https://www.youtube.com/embed/${id}` : null;
+  } catch {
+    return null;
+  }
+}
+
+async function loadYouTube() {
+  try {
+    const data = await fetchJSON('video.json');
+    const iframe = document.getElementById('youtube-iframe');
+
+    if (data.mode === 'manual' && data.manualUrl) {
+      const embed = ytEmbedUrlFromWatch(data.manualUrl);
+      if (embed) iframe.src = embed;
+      return;
+    }
+
+    if (data.mode === 'latest' && data.channelId) {
+      // We store the resolved latest video URL right in video.json
+      // (admin.html updates it), so just use manualUrl if present.
+      if (data.manualUrl) {
+        const embed = ytEmbedUrlFromWatch(data.manualUrl);
+        if (embed) iframe.src = embed;
+      }
+    }
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
+/* ------------------------------
+   Boot
+--------------------------------*/
+(async function init() {
+  try {
+    // NEWS
+    const newsTxt = await fetchText('news.txt'); // you already keep this file
+    const items = parseNewsTxt(newsTxt);
+    renderNews(items);
+  } catch (e) {
+    console.warn(e);
+  }
+
+  loadBanner();  // banner.txt → marquee
+  loadYouTube(); // video.json → iframe
+})();
+</script>
+
+
 <body>
   <div id="nav">
     <img src="https://idkstudios.s3.us-east-2.amazonaws.com/images/icons/nav/archiveIcon.png"
