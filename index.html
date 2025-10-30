@@ -276,7 +276,7 @@ async function loadYouTube() {
 (async function init() {
   try {
     // NEWS
-    const newsTxt = await fetchText('news.txt'); // you already keep this file
+    const newsTxt = await fetchText('scripts/news.txt');
     const items = parseNewsTxt(newsTxt);
     renderNews(items);
   } catch (e) {
@@ -375,5 +375,6 @@ async function loadYouTube() {
 </body>
 
 </html>
+
 
 
