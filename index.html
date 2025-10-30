@@ -61,6 +61,12 @@
       color: #262435;
     }
 
+    .news-item hr {
+  border: 0;
+  border-top: 1px solid #b5b4ae;
+  width: 100%;
+}
+
     .news-item p strong {
       font-size: 16px;
       font-weight: bold;
@@ -166,10 +172,17 @@ function renderNews(items) {
     const wrap = document.createElement('div');
     wrap.className = 'news-item';
 
-    const p = document.createElement('p');
-    p.innerHTML = `<strong>${date}</strong> — ${description}`;
-    wrap.appendChild(p);
+    // date (bold)
+    const dateP = document.createElement('p');
+    dateP.innerHTML = `<strong>${date}</strong>`;
+    wrap.appendChild(dateP);
 
+    // description on its own line
+    const descP = document.createElement('p');
+    descP.textContent = description;
+    wrap.appendChild(descP);
+
+    // image (clickable if link)
     if (image && image.toLowerCase() !== 'none') {
       const img = document.createElement('img');
       img.src = image;
@@ -186,6 +199,11 @@ function renderNews(items) {
       a.textContent = 'Read more';
       wrap.appendChild(a);
     }
+
+    // the separator line exactly like your layout
+    const hr = document.createElement('hr');
+    hr.style.marginTop = '18px';
+    wrap.appendChild(hr);
 
     list.appendChild(wrap);
   });
@@ -357,3 +375,4 @@ async function loadYouTube() {
 </body>
 
 </html>
+
